@@ -30,7 +30,7 @@ mongoose.connection.on("connected", () => {
 })
 
 app.use(cookieParser());
-app.use(express.json())
+app.use(express.json());
 
 
 app.use('/api/auth', authRoute);

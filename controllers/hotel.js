@@ -37,6 +37,17 @@ export const deleteHotel = async (req, res, next) => {
 
 export const getHotel = async (req, res, next) => {
     try {
+        const getHotel = await Hotel.findById(req.params.id);
+        res.status(200).json(getHotel)
+    }
+    catch(err) {
+        next(err);
+    }
+} 
+
+
+export const getHotels = async (req, res, next) => {
+    try {
         const getHotels = await Hotel.find();
         res.status(200).json(getHotels)
     }
