@@ -1,0 +1,29 @@
+.footer {
+  width: 100%;
+  width: 1024px;
+  font-size: 12px;
+  list-style-type: none;
+}
+
+.fLists {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.fList {
+  list-style-type: none;
+}
+
+.fListItem {
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #005380;
+}
+
+.fText {
+  font-size: 15px;
+  margin-bottom: 2rem;
+  text-align: center;
+}/*# sourceMappingURL=footer.css.map */

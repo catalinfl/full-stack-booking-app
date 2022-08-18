@@ -1,0 +1,55 @@
+.fp {
+    display: flex;
+    max-width: 1024px;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.fpImg {
+    width: 100%;
+    object-fit: cover;
+    display: flex;
+    height: 150px;
+    -webkit-filter: grayscale(100%) blur(3px);
+	filter: grayscale(100%) blur(3px);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+
+.fpImg:hover {
+    -webkit-filter: grayscale(0) blur(0);
+	filter: grayscale(0) blur(0);
+}
+
+
+.fpItem { 
+    width: 100%;
+    border: transparent;
+    height: 250px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.fpName {
+    font-weight: bold;
+}
+
+.fpCity {
+    font-weight: 200;
+}
+
+.fpRating > button {
+    background-color: #003580;
+    color: white;
+    border: none;
+    padding: 3px;
+    margin-right: 5px;
+    margin-top: 0.25rem;
+}
+
+.fpRating > span {
+    font-size: 14px;
+}
