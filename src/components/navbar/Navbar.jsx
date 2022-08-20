@@ -4,7 +4,7 @@ import '../../css/navbar.css'
 
 const Navbar = () => {
   return (
-    <navbar className='navbar'>
+    <nav className='navbar'>
         <div className="navContainer">
             <span className="logo"> booking </span>
             <div className='navItems'>
@@ -12,7 +12,7 @@ const Navbar = () => {
                 <button className='navButton'> Login </button>
             </div>
         </div>
-    </navbar>
+    </nav>
   )
 }
 
