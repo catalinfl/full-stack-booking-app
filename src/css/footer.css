@@ -1,13 +1,17 @@
 .footer {
   width: 100%;
-  width: 1024px;
+  max-width: 1024px;
   font-size: 12px;
   list-style-type: none;
+  align-items: center;
+  position: relative;
+  margin: auto;
 }
 
 .fLists {
   display: flex;
   width: 100%;
+  max-width: 1024px;
   justify-content: space-between;
   margin-bottom: 30px;
 }
@@ -20,6 +24,7 @@
   margin-bottom: 10px;
   cursor: pointer;
   color: #005380;
+  text-align: center;
 }
 
 .fText {

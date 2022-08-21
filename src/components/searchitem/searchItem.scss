@@ -67,6 +67,7 @@
 .siRating > span {
     font-size: 20px;
     gap: 10px;
+    
 }
 
 .siRating {
@@ -91,21 +92,20 @@
     display: flex;
     flex-direction: column;
     font-size: 17px;
-    justify-content: space-between;
     justify-items: center;
 }
 
 .siPrice {
     font-size: 25px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .siTaxOp { 
     font-size: 14px; 
     color: grey;   
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin-bottom: 10px;
 }
 
