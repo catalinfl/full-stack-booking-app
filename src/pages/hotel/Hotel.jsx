@@ -38,6 +38,25 @@ const Hotel = () => {
       setSlideNumber(i);
       setOpen(true);
     }
+
+    const handleXClick = () => {
+      setOpen(false);
+    }
+
+    const handlePrevious = (index) => {
+      setSlideNumber(index-1)
+      if(index<=0) {
+        setSlideNumber(photos.length-1);
+      }
+    }
+
+    const handleNext = (index) => {
+        setSlideNumber(index+1);
+        if(index >= photos.length-1) {
+          setSlideNumber(0)
+         }
+      }
+
     return (
     <div className="div">
     <Navbar />
@@ -45,12 +64,12 @@ const Hotel = () => {
       <div className="hotelContainer">
         { open && 
         <div className="slider">
-          <FontAwesomeIcon icon={faCircleXmark} />
-          <FontAwesomeIcon icon={faCircleArrowLeft} />
+          <FontAwesomeIcon className="circleXmark" onClick={handleXClick} icon={faCircleXmark} />
+          <FontAwesomeIcon className="circleArrowLeft" onClick={() => handlePrevious(slideNumber)} icon={faCircleArrowLeft} />
           <div className="sliderWrapper">
             <img src={photos[slideNumber].src} alt="" className="sliderImg" />
           </div>
-          <FontAwesomeIcon icon={faCircleArrowRight} />
+          <FontAwesomeIcon className="circleArrowRight"onClick={() => handleNext(slideNumber)} icon={faCircleArrowRight} />
         </div> }
         <div className="hotelWrapper">
           <h1 className="hotelTitle"> Grand Hotel </h1>
