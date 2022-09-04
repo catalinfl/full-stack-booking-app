@@ -1,0 +1,87 @@
+$color-blue: hsl(209, 64%, 46%);
+$color-blue2: hsl(209, 69%, 76%);
+$color-blue3: hsl(209, 76%, 87%);
+$color-blue4: hsl(209, 60%, 90%);
+
+
+
+.reserve {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.418);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 300;
+
+    .selectRooms {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        font-size: 8px;
+        color: grey;
+    }    
+
+}
+
+
+.room {
+    display: flex;
+    flex-direction: column;
+}
+
+.rContainer {
+    background-color: white;
+    padding: 20px;
+    position: relative;
+}
+
+.rClose {
+    position: absolute;
+    right: 1px;
+    top: 3px;
+    cursor: pointer;
+}
+
+.rItem {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 20px;
+}
+
+.rInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.rTitle {
+    font-weight: 500;
+}   
+
+.rDesc {
+    font-weight: 300;
+}
+
+.rMax {
+    font-size: 12px;
+}
+
+.rPrice {
+    font-weight: 500;
+}
+
+.rButton {
+    width: 100%;
+    background-color: $color-blue;
+    color: white;
+    border: transparent;
+    outline: none;
+    padding: 5px;
+    font-weight: 700;
+}
+

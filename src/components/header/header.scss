@@ -14,6 +14,7 @@ $active-blue: #3d71b8;
         width: 100%;
         max-width: 1024px;
         margin: 20px 0px 0px 0px;
+        padding-bottom: 30px;
 
         .headerList {
             display: flex;
@@ -42,7 +43,7 @@ $active-blue: #3d71b8;
         }
 
         .headerBtn {
-            background-color: #0071c2;
+            background-color: $active-blue;
             color: white;
             font-weight: 500;
             cursor: pointer;
@@ -51,13 +52,6 @@ $active-blue: #3d71b8;
             padding: 10px;
             font-size: 1rem;
         }
-
-        .btnPrincipal {
-            margin-bottom: 50px;
-            border-radius: 20px;
-            padding: 20px;            
-        }
-
 
         .headerSearch { 
             height: 30px;
@@ -69,16 +63,18 @@ $active-blue: #3d71b8;
             padding: 20px 0;
             border-radius: 5px;
             position: absolute;
-            bottom: -15px;
+            bottom: -25px;
             width: 100%;
             max-width: 1024px;
-            color: #febb02;
+            color: #000;
+            padding: 20px;            
 
 
             .headerSearchItem {
                 display: flex;
                 gap: 10px;
                 cursor: pointer;
+                color: #000;
 
                 .headerSearchText {
                     color: #000;
@@ -95,7 +91,7 @@ $active-blue: #3d71b8;
             .headerSearchInput {
                 border: none;
                 outline: none;
-                color: #febb02;
+                color: #000;
                 font-size: 1.1rem;
             }
 

@@ -1,3 +1,7 @@
+$principal-blue: #003580;
+$active-blue: #3d71b8;
+
+
 .navbar {
     height: 50px;
     background-color: #003580;
@@ -8,6 +12,7 @@
 .navContainer {
     width: 100%;
     max-width: 1024px;
+    position: relative;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -16,8 +21,11 @@
 .logo {
     font-weight: 800;
     font-size: 2rem;
-    margin-top: 4px;
+    position: absolute;
+    left: 0;
+    top: 3px;
 }
+
 
 .navButton {
     margin-left: 20px;
@@ -28,3 +36,26 @@
     border-radius: 1rem;
     margin-top: 10px;
 }
+
+.logged {
+    color: #fff;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 20px; 
+
+    button {
+        background-color: $active-blue;
+        border: transparent;
+        outline: none;
+        color: white;
+        padding: 5px;
+    }
+
+    .welcomeText {
+        margin-top: 0.20rem;
+    }
+
+
+}
+

@@ -1,0 +1,92 @@
+$color-blue: hsl(209, 64%, 46%);
+$color-blue2: hsl(209, 69%, 76%);
+$color-blue3: hsl(209, 76%, 87%);
+$color-blue4: hsl(209, 60%, 90%);
+$color-blue5: hsl(210, 69%, 32%);
+
+html, body {
+    height: 100%;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    background-color: $color-blue5;
+    overflow-y: hidden;
+}
+
+.lContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-blue;
+    padding: 5rem;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.lInput {
+    outline: none;
+    border: transparent;
+    box-shadow: 2px 3px $color-blue2;
+    border-radius: 5px;
+    padding: 10px;
+    border: solid 1px $color-blue3;
+    font-size: 0.95rem;
+}
+
+.lButton {
+    outline: none;
+    font-size: 1rem;
+    border: none;
+    width: 50%;
+    margin: auto;
+    padding: 1rem;
+    color: #fff;
+    cursor: pointer;
+    background-color: $color-blue2;
+    margin-top: 1rem;
+    transition: linear 0.7s;
+}
+
+.lButton:hover {
+    border-radius: 1rem;
+}
+
+
+.createAccount {
+    margin-top: 2rem;
+    display: flex;
+    background-color: $color-blue;
+    flex-direction: column;
+    width: 300px;
+    text-align: center;
+    padding: 3rem;
+    border-radius: 5px;
+
+    .btn-createAccount {
+        border: transparent;
+        background-color: $color-blue2;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 1rem;
+        outline: none;
+        color: #fff;
+        transition: linear 0.7s;
+
+        &:hover {
+            border-radius: 0px;
+            cursor: pointer;
+            background-color: $color-blue5;
+        }
+    }
+
+    p {
+        color: #fff;
+        margin-bottom: 1rem;
+        font-size: 1.32rem;
+    }
+
+}

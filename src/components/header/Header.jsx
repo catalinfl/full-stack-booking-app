@@ -1,22 +1,33 @@
 import { faCalendarDays } from '@fortawesome/free-regular-svg-icons'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { faBaby, faBed, faCar, faPerson, faPlane, faTaxi } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react';
-import '../../css/header.css';
+import './header.scss';
 import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { format } from 'date-fns';
-import {useNavigate} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { SearchContext } from '../../context/SearchContext';
+import { AuthContext } from '../../context/AuthContext';
 
 
 const Header = ({type}) => {
-    const [date, setDate] = useState([
+    
+    const day = new Date();
+    const tomorrow = day.getDate() + 1;
+    day.setDate(tomorrow);
+
+    const maxDate = new Date();
+    maxDate.setFullYear(2023);
+    const [dates, setDates] = useState([
         {
             startDate: new Date(),
-            endDate: new Date(),
-            key: 'selection'
+            endDate: day,
+            key: 'selection',
+            color: '#0071c2',
+            showDateDisplay: true,
         }
     ])
 
@@ -29,7 +40,7 @@ const Header = ({type}) => {
         children: 0,
         room: 1,
     })
-
+    
     const handleOption = (name, operation) => {
         setOptions(prev => {return {
             ...prev, [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
@@ -39,9 +50,15 @@ const Header = ({type}) => {
 
     const navigate = useNavigate();
 
+    const {searchDispatch} = useContext(SearchContext);
+    const { user } = useContext(AuthContext);
+
     const handleSearch = () => {
-        navigate("/hotels", {state: {date, options, destination}})
+        searchDispatch({type: "NEW_SEARCH", payload: {destination, dates, options}})
+        navigate(`/hotels`, {state: {dates, options, destination}})
     }
+
+    
 
   return (
     <div className='header'>
@@ -74,7 +91,9 @@ const Header = ({type}) => {
                 <p className="headerDesc">
                     Get rewarded for your travels - unlock instant savings of 10% or more with a free premium account
                 </p>
-                <button className="headerBtn btnPrincipal"> Sign in / register </button>
+                <Link style={{textDecoration: 'none'}} to='/login'>
+               {!user && <button className="headerBtn btnPrincipal"> Sign in / register </button>}
+                </Link> 
                 <div className="headerSearch">
                     <div className="headerSearchItem">
                         <FontAwesomeIcon icon={faBed} className='headerIcon' />
@@ -84,9 +103,9 @@ const Header = ({type}) => {
                     </div>
                     <div className="headerSearchItem">
                         <FontAwesomeIcon icon={faCalendarDays} className='headerIcon'/>
-                        <span onClick={() => setOpenDate(!openDate)}className='headerSearchText'> {`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(date[0].endDate, "dd/MM/yyyy")}`} </span>
-                        { openDate && <DateRange editableDateInputs={true} onChange={item => setDate([item.selection])} moveRangeOnFirstSelection={false} ranges={date}
-                        className='date' min={new Date()} />}
+                        <span onClick={() => setOpenDate(!openDate)}className='headerSearchText'> {`${format(dates[0].startDate, "dd/MM/yyyy")} to ${format(dates[0].endDate, "dd/MM/yyyy")}`} </span>
+                        {openDate && <DateRange  editableDateInputs={true} onChange={item => setDates([item.selection])} moveRangeOnFirstSelection={true} ranges={dates}
+                        className='date' minDate={new Date()} min={new Date()}  />}
                     </div>
                     <div className="headerSearchItem">
                         <FontAwesomeIcon icon={faPerson} className='headerIcon' />

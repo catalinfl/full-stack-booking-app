@@ -2,35 +2,40 @@
     display: flex;
     max-width: 1024px;
     justify-content: space-between;
+    width: 100%;
     gap: 20px;
+    margin-bottom: 3rem;
 }
 
 .fpImg {
     width: 100%;
     object-fit: cover;
     display: flex;
-    height: 150px;
-    -webkit-filter: grayscale(100%) blur(3px);
-	filter: grayscale(100%) blur(3px);
+    height: 200px;
+    -webkit-filter: blur(3px);
+	filter: blur(3px);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
+    justify-content: space-between;
 }
 
 
 .fpImg:hover {
-    -webkit-filter: grayscale(0) blur(0);
-	filter: grayscale(0) blur(0);
+    -webkit-filter: blur(0);
+	filter: blur(0);
 }
 
 
 .fpItem { 
     width: 100%;
     border: transparent;
-    height: 250px;
+    height: 200px;
     flex: 1;
     display: flex;
     flex-direction: column;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    justify-content: space-between;
+    margin-top: 0.25rem;
 }
 
 .fpName {
@@ -47,7 +52,6 @@
     border: none;
     padding: 3px;
     margin-right: 5px;
-    margin-top: 0.25rem;
 }
 
 .fpRating > span {
