@@ -1,10 +1,16 @@
 import React from 'react'
 import './register.scss'
 import Navbar from '../../components/navbar/Navbar'
+import { useNavigate  } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 
+
 const Register = () => {
+
+  const navigate = useNavigate();
+
+
   return (
     <>
     <Navbar />
@@ -23,7 +29,9 @@ const Register = () => {
         className="regItem"
         id="password"
         placeholder="password" />
-        <button className="regButton"> Create account </button>
+        <Link to='/' style={{textDecoration: 'none', color: 'inherit'}}> 
+        <button className="regButton regButtonText"> Create account </button>
+        </Link>
       </div>
     </div>
     </>

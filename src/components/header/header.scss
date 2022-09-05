@@ -53,6 +53,10 @@ $active-blue: #3d71b8;
             font-size: 1rem;
         }
 
+        .btnPrincipal {
+            margin-bottom: 30px;
+        }
+
         .headerSearch { 
             height: 30px;
             background-color: white;
@@ -136,7 +140,7 @@ $active-blue: #3d71b8;
         padding: 2px;
         width: 30px;
         height: 20px;
-        border-radius: 2px;
+        border-radius: 5px;
         border: transparent;
         outline: none;
         background-color: transparent;

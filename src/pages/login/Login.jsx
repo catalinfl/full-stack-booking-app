@@ -55,8 +55,10 @@ const Login = () => {
         <button disabled={loading} onClick={handleClick} className="lButton">
           Login
         </button>
-        {error && <span>{error.message}</span>}
       </div>
+      {error && 
+      <div className="errorMessage"> Error: {error.message} </div>
+}
       <div className="createAccount">  <p> Not having an account? </p>
         <Link to='/register' style={{color: 'inherit', textDecoration: 'none'}}> 
         <button className="btn-createAccount"> Create account </button>
