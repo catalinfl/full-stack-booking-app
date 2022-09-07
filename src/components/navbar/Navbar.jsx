@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './navbar.scss'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext';
+import { RegisterContext } from '../../context/RegisterContext';
 
 const Navbar = () => {
   const { user, authDispatch } = useContext(AuthContext);
+  const { username } = useContext(RegisterContext);
 
   const navigate = useNavigate();
 
@@ -12,7 +14,6 @@ const Navbar = () => {
     authDispatch({type: "LOGOUT"})
     navigate('/');
   }
-
 
   return (
     <nav className='navbar'>

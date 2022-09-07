@@ -24,12 +24,13 @@ const Header = ({type}) => {
     const [dates, setDates] = useState([
         {
             startDate: new Date(),
-            endDate: day,
+            endDate: new Date(day),
             key: 'selection',
             color: '#0071c2',
             showDateDisplay: true,
         }
     ])
+    console.log(dates);
 
     const [openDate, setOpenDate] = useState(false);
     const [openOptions, setOpenOptions] = useState(false);
@@ -50,7 +51,7 @@ const Header = ({type}) => {
 
     const navigate = useNavigate();
 
-    const {searchDispatch} = useContext(SearchContext);
+    const { searchDispatch } = useContext(SearchContext);
     const { user } = useContext(AuthContext);
 
     const handleSearch = () => {

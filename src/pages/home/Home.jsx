@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './home.scss'
 import Navbar from '../../components/navbar/Navbar'
 import Header from '../../components/header/Header'
@@ -7,8 +7,11 @@ import PropertyList from '../../components/propertyList/PropertyList'
 import FeaturedProperties from '../../components/featuredProperties/FeaturedProperties'
 import MailList from '../../components/mailList/mailList'
 import Footer from '../../components/footer/Footer'
+import { useLocation } from 'react-router-dom'
+
 
 const Home = () => {
+
   return (
     <div>
     <Navbar />

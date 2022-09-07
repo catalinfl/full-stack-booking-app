@@ -1,8 +1,9 @@
 import React from 'react'
-import { createContext, useReducer, useEffect} from 'react'
+import { useEffect } from 'react';
+import { createContext, useReducer} from 'react'
 
 const INITIAL_STATE = {
-    user: null,
+    username: JSON.parse(localStorage.getItem("user")) || null,
     loading: false,
     error: null
 }
@@ -13,7 +14,7 @@ const RegisterReducer = (state, action) => {
     switch (action.type) {
         case "REGISTER_START":
             return {
-                user: null,
+                username: null,
                 email: null,
                 password: null,
                 loading: true,
@@ -21,7 +22,7 @@ const RegisterReducer = (state, action) => {
             }
         case "REGISTER_SUCCESS":
             return {
-                user: action.payload,
+                username: action.payload,
                 email: action.payload,
                 password: action.payload,
                 loading: false,
@@ -29,7 +30,7 @@ const RegisterReducer = (state, action) => {
             }
         case "REGISTER_FAILED":
             return {
-                user: null,
+                username: null,
                 email: null,
                 password: null,
                 loading: false,
@@ -42,15 +43,21 @@ const RegisterReducer = (state, action) => {
 }
 
 export const RegisterContextProvider = ({children}) => {
-        const [state, dispatch] = useReducer(RegisterReducer, INITIAL_STATE);
+        const [state, registerDispatch] = useReducer(RegisterReducer, INITIAL_STATE);
+
+        useEffect(() => {
+            localStorage.setItem("user", JSON.stringify(state.username))
+        }, [])
 
         return (
             <RegisterContext.Provider
             value={{
-                user: state.user,
+                username: state.username,
+                email: state.email,
+                password: state.password,
                 loading: state.loading,
-                error: state.error
-
+                error: state.error,
+                registerDispatch
             }}
             >
                 {children}
