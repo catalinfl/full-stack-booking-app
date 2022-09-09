@@ -10,16 +10,20 @@ $color-blue5: hsl(210, 69%, 32%);
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: $color-blue5;
     height: 100vh;
     justify-content: space-between;
     position: relative;
     justify-content: center;
+    background-image: url('./register1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 
     p {
         color: white;
         font-size: 2rem;
-        margin-bottom: 100px;
+        position: absolute;
+        top: 5rem;
     }
 }
 
@@ -42,7 +46,7 @@ $color-blue5: hsl(210, 69%, 32%);
 .regItem {
     outline: none;
     border: transparent;
-    box-shadow: 2px 3px $color-blue2;
+    box-shadow: 2px 3px $color-blue5;
     border-radius: 5px;
     border: solid 1px $color-blue3;
     padding: 10px;
@@ -61,7 +65,7 @@ $color-blue5: hsl(210, 69%, 32%);
     font-weight: bold;
     align-items: center;
     margin-top: 1rem;
-    transition: linear 0.7s;
+    transition: linear 0.5s;
     opacity: 1;
     position: relative;
 

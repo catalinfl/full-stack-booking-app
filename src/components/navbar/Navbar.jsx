@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react';
 import './navbar.scss'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext';
-import { RegisterContext } from '../../context/RegisterContext';
+import { AiOutlinePlusCircle } from 'react-icons/ai' 
+
+
 
 const Navbar = () => {
-  const { user, authDispatch } = useContext(AuthContext);
-  const { username } = useContext(RegisterContext);
+  const { user, isLoggedIn, authDispatch } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -22,7 +23,11 @@ const Navbar = () => {
             <span className="logo"> booking </span>
           </Link>
             { user ? 
-            <div className="logged"> <p className="welcomeText"> Welcome back, {user.username} </p> 
+            <div className="logged"> 
+            {isLoggedIn && <p className="welcomeText"> Welcome back, {user.username} </p> }
+            <Link to='/create' style={{color: 'inherit', textDecoration: 'none'}}>
+            <button className="createProperty"> <AiOutlinePlusCircle style={{fontSize: '15px'}} /> <span> Publish your hotel </span> </button>
+            </Link>
             <Link to='/' style={{color: 'inherit', textDecoration: 'none'}}>
             <button className="btn-log" onClick={handleLogout}> Logout </button>
             </Link>

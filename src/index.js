@@ -5,7 +5,7 @@ import App from './App';
 import { SearchContextProvider } from './context/SearchContext';
 import { AuthContextProvider } from './context/AuthContext';
 import { RegisterContextProvider } from './context/RegisterContext';
-
+import { CreateHotelContextProvider } from './context/CreateHotelContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +13,9 @@ root.render(
     <RegisterContextProvider> 
     <AuthContextProvider>
     <SearchContextProvider> 
+    <CreateHotelContextProvider>
     <App />
+    </CreateHotelContextProvider>
     </SearchContextProvider>
     </AuthContextProvider>
     </RegisterContextProvider>

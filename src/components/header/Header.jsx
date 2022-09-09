@@ -15,22 +15,19 @@ import { AuthContext } from '../../context/AuthContext';
 
 const Header = ({type}) => {
     
-    const day = new Date();
-    const tomorrow = day.getDate() + 1;
-    day.setDate(tomorrow);
+    const today = new Date();
+    const twoDaysAway = new Date();
+    twoDaysAway.setDate(today.getDate() + 2);
 
-    const maxDate = new Date();
-    maxDate.setFullYear(2023);
     const [dates, setDates] = useState([
         {
-            startDate: new Date(),
-            endDate: new Date(day),
+            startDate: new Date(today),
+            endDate: new Date(twoDaysAway),
             key: 'selection',
             color: '#0071c2',
             showDateDisplay: true,
         }
     ])
-    console.log(dates);
 
     const [openDate, setOpenDate] = useState(false);
     const [openOptions, setOpenOptions] = useState(false);

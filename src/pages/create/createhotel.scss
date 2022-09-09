@@ -1,0 +1,158 @@
+$color-blue: hsl(209, 64%, 46%);
+$color-blue2: hsl(209, 69%, 76%);
+$color-blue3: hsl(209, 76%, 87%);
+$color-blue4: hsl(209, 60%, 90%);
+$color-blue5: hsl(209, 86%, 34%);
+$positioning-normal: calc(330px - 227px);
+
+
+
+.createHotel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: 120vh;
+    background-image: url(createhotel.jpg);
+    background-repeat: no-repeat;
+}
+
+.createHotelInfo {
+    padding: 50px;
+    font-size: 35px;
+    color: white;
+}
+
+.logInLine {
+    width: 10px;
+    position: absolute;
+    height: 801px;
+    background-color: white;
+    left: 220px;
+    bottom: 70px;
+    border-radius: 10px;
+}
+
+
+
+.logInSphere {
+    position: absolute;
+    background-color: $color-blue;
+    opacity: 0.8;
+    width: 10px;
+    height: 10px;
+    left: 220px;
+    bottom: 70px;
+    border-radius: 10px;
+    transition: top linear 1.5s;
+}
+
+.initial {
+    top: 184px;
+}
+
+.namesphere {
+    top: 227px;
+}
+
+.citysphere {
+    top: 327px;
+}
+
+
+.addresssphere {
+    top: 327px + $positioning-normal;
+}
+
+.titlesphere {
+    top: 327px + 2 * $positioning-normal;
+}
+
+.descsphere {
+    top: 327px + 3 * $positioning-normal;
+}
+.cheapestPricesphere {
+    top: 327px + 4 * $positioning-normal;
+}
+
+.distancesphere {
+    top: 327px + 5 * $positioning-normal;
+}
+
+.typesphere {
+    top: 323px + 6 * $positioning-normal;
+}
+
+.createHotelContainer {
+    background-color: $color-blue5;
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0.90;
+    position: relative;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.createHotelForm {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 500px;
+
+    .inputItem {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        margin: 10px;
+
+        > label {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        > input {
+            background-color: $color-blue;
+            color: rgb(255, 255, 255);
+            outline: none;
+            border: none;
+            padding: 8px;
+            font-size: 20px;
+            border-radius: 10px;
+            
+            &::placeholder {
+                color: white;
+            }
+        }
+
+        > select, option {
+            background-color: $color-blue;
+            color: white;
+            outline: none;
+            border: none;
+            padding: 5px;
+            font-size: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 0px;
+        }
+    }
+}
+
+.createHotelButton {
+    background-color: $color-blue;
+    outline: none;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 5px;
+    align-items: center;
+    margin-top: 20px;
+}

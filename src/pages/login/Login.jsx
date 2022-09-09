@@ -20,13 +20,16 @@ const Login = () => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const handleClick = async (e) => {
     e.preventDefault();
     authDispatch({ type: "LOGIN_START" });
     try {
       const res = await axios.post("/auth/login", credentials);
       authDispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
-      navigate("/")
+      setIsLoggedIn(true);
+      navigate("/", {state: {isLoggedIn}})
     } catch (err) {
       authDispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
     }
