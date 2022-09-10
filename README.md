@@ -1,3 +1,1 @@
-# Frontend project for hotel
-
-Final stage
+# Full stack booking clone made with MERN
